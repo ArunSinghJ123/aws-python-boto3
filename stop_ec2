@@ -1,0 +1,7 @@
+import boto3
+my_ec2 = boto3.client('ec2')
+try:
+    response = my_ec2.stop_instances(InstanceIds=['i-12345'])
+    print response 
+except Exception as e:
+    print 'Error in Stopping the EC2 instance {}'.format(e)
