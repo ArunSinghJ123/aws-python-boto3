@@ -7,8 +7,8 @@ class createrole:
         self.role = rolename
         self.policy = policyname
         self.policy_document = policydocument
+
     def kickoff_policy(self):
-        print ('in policy')
         try:
             client = boto3.client('iam')
             with open(self.policy_document, 'r') as policy:
@@ -26,8 +26,8 @@ class createrole:
         client = boto3.client('iam')
         try:
             print (self.policy_document)
-            with open('iam.json', 'r') as policy:
-                tmp_holder = policy.read()
+            with open('mandate_iam_assume.json', 'r') as roledoc:
+                tmp_holder = roledoc.read()
             response = client.create_role(Path='/', RoleName=self.role, AssumeRolePolicyDocument=tmp_holder, Description='sample role')
         except Exception as e:
             print ('Error in creating role'.format(e))
@@ -50,7 +50,3 @@ if __name__ == "__main__":
     if policy_Arn:
         print ('Creating a Role and Attaching Policy to the Role now....')
         create_policy.kickoff_role(policy_Arn)
-
-
-    #create_role = createrole(rolename)
-    #print (create_role.kickoff_role())
