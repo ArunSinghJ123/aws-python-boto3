@@ -1,6 +1,9 @@
-*.json
+pip-selfcheck.json
 *.pyc
+.git
 bin
 dist
 include
 lib
+.python
+.Python

@@ -25,16 +25,21 @@ class createrole:
         '''create a role and attaching the policy created'''
         client = boto3.client('iam')
         try:
-            print (self.policy_document)
             with open('mandate_iam_assume.json', 'r') as roledoc:
                 tmp_holder = roledoc.read()
             response = client.create_role(Path='/', RoleName=self.role, AssumeRolePolicyDocument=tmp_holder, Description='sample role')
+            if response['ResponseMetadata']['HTTPStatusCode'] == 200:
+                print ('Role created')
+            else:
+                print ('Role creation failed')
         except Exception as e:
             print ('Error in creating role'.format(e))
         try:
-            print (policy_Arn)
             response = client.attach_role_policy(RoleName=self.role, PolicyArn=policy_Arn)
-            print (response)
+            if response['ResponseMetadata']['HTTPStatusCode'] == 200:
+                print ('Policy attached to role')
+            else:
+                print ('Policy attachment to role failed')
         except Exception as e:
             print ('Error in creating role'.format(e))
 
