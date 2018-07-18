@@ -1,6 +1,6 @@
-# aws-python-boto3
+# aws-python-boto3 #iam #bucketpolicy
 
-The Idea of this repo is to write a wrapper functionality for frequently used aws services
+The idea of this repo is to write a wrapper functionality for frequently used aws automation scenarios
 
 
 *******IAM*******
@@ -17,13 +17,15 @@ Step 2: virtualenv aws-python-boto3
 
 Step 3: source aws-python-boto3/bin/activate
 
-Step 4: Run  python  iam/roles.py  [ROLENAME]  [POLICYNAME]  [CUSTOM JSON POLICY DOCUMENT]
+Step 4: python setup.py install
 
-Example: python iam/roles.py samplerole samplepolicy sample_s3.json
+Step 4: Run  iam  [ROLENAME]  [POLICYNAME]  [CUSTOM JSON POLICY DOCUMENT]
 
 *********S3 BUCKET POLICY ATTACHMENT TO BUCKETS*********
 
 **Creating Custom Bucket Policies and Attaching to List of S3 Buckets:**
+
+Note: Existing bucket policies if any might get overrided - This is meant for scenarios where 100 buckets need same policy attached
 
 bucketlist - provides the list of buckets to which policies will be attached
 
@@ -31,6 +33,12 @@ bucket_policy.json - bucket policy json , appends bucketname as per the given li
 
 Change the bucketlist file and bucket_policy.json as per need - This is an example code
 
-Run  python  s3_bucketpolicy/s3_bucket_policy.py  [BUCKET_LIST_FILE]  [BUCKET_POLICY_JSON]
+Step 1: git clone this repository
 
-Example: python s3_bucketpolicy/s3_bucket_policy.py bucketlist bucket_policy.json
+Step 2: virtualenv aws-python-boto3
+
+Step 3: source aws-python-boto3/bin/activate
+
+Step 4: python setup.py install
+
+Run  bucket  [BUCKET_LIST_FILE]  [BUCKET_POLICY_JSON]
