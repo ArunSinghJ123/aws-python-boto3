@@ -42,9 +42,7 @@ class createrole:
                 print ('Policy attachment to role failed')
         except Exception as e:
             print ('Error in creating role'.format(e))
-
-
-if __name__ == "__main__":
+def main():
     if len(sys.argv) != 4:
         print ('Error. Provide the arguments - rolename, policyname, policydocument')
     rolename = sys.argv[1]
@@ -55,3 +53,6 @@ if __name__ == "__main__":
     if policy_Arn:
         print ('Creating a Role and Attaching Policy to the Role now....')
         create_policy.kickoff_role(policy_Arn)
+
+if __name__ == "__main__":
+    main()

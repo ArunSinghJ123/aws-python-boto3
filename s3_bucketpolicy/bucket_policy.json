@@ -1,1 +1,1 @@
-{"Version": "2012-10-17", "Statement": [{"Sid": "Example permissions", "Effect": "Allow", "Principal": {"AWS": "arn:aws:iam::123456789:root"}, "Action": ["s3:GetBucketLocation", "s3:ListBucket"], "Resource": "arn:aws:s3:::"}]}
+{"Version": "2012-10-17", "Statement": [{"Sid": "Example permissions", "Effect": "Allow", "Principal": {"AWS": "arn:aws:iam::893437554381:root"}, "Action": ["s3:GetBucketLocation", "s3:ListBucket"], "Resource": "arn:aws:s3:::"}]}

@@ -7,3 +7,5 @@ include
 lib
 .python
 .Python
+*.egg-info
+build

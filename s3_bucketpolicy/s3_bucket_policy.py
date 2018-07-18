@@ -36,9 +36,7 @@ class bucketpolicy:
             logging.info('Execution of Bucket Policy attachment to the buckets in file {} success'.format(self.buckets))
         except Exception as e:
             logging.info('Error in reverting the json{}'.format(e))
-
-
-if __name__ == "__main__":
+def main():
     if len(sys.argv) != 3:
         print ('Error. Provide the arguments - bucketlist_filename, policy_filename')
         exit()
@@ -47,3 +45,6 @@ if __name__ == "__main__":
     bucket_policy = bucketpolicy(buckets, policys)
     if bucket_policy.attach_bucketpolicies():
         bucket_policy.revert_json()
+
+if __name__ == "__main__":
+    main()
