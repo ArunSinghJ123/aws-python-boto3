@@ -1,4 +1,4 @@
-# aws-python-boto3 #iam #bucketpolicy
+# AWS Hammer
 
 The idea of this repo is to write a wrapper functionality for frequently used aws automation scenarios
 
