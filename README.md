@@ -11,6 +11,7 @@ Note:  Do not remove the mandate_iam_assume.json as it provides the AssumeRolePo
 
 Edit sample_s3.json as per need - This is an example code
 
+```
 Step 1: git clone this repository
 
 Step 2: virtualenv aws-python-boto3
@@ -19,7 +20,8 @@ Step 3: source aws-python-boto3/bin/activate
 
 Step 4: python setup.py install
 
-Step 4: Run  iam  [ROLENAME]  [POLICYNAME]  [CUSTOM JSON POLICY DOCUMENT]
+Step 5: Run  iam  [ROLENAME]  [POLICYNAME]  [CUSTOM JSON POLICY DOCUMENT FILE]
+```
 
 *********S3 BUCKET POLICY ATTACHMENT TO BUCKETS*********
 
@@ -33,6 +35,7 @@ bucket_policy.json - bucket policy json , appends bucketname as per the given li
 
 Change the bucketlist file and bucket_policy.json as per need - This is an example code
 
+```
 Step 1: git clone this repository
 
 Step 2: virtualenv aws-python-boto3
@@ -41,4 +44,5 @@ Step 3: source aws-python-boto3/bin/activate
 
 Step 4: python setup.py install
 
-Run  bucket  [BUCKET_LIST_FILE]  [BUCKET_POLICY_JSON]
+Step 5: Run  bucket  [BUCKET_LIST_FILE]  [BUCKET_POLICY_JSON]
+```
