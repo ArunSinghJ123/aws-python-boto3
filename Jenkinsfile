@@ -20,12 +20,11 @@ pipeline {
                 echo "passes stage 2"
                 '''
             }
+         }
          stage('Sending slack notification') {
             steps {
                    slackSend color: '#BADA55', message: 'Hello Devops pipe Success', channel: 'devops-planet'
                  }
-            }           
-            
+            }                    
          }
      }
- }
