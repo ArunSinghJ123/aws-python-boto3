@@ -7,9 +7,6 @@ pipeline {
                 sh '''
                 aws sts assume-role --role-arn arn:aws:iam::125451170834:role/arun-asg --role-session-name devops-example
                 aws s3 ls
-                touch hello.txt
-                echo "hello devops" > hello.txt
-                cat hello.txt
                 '''
             }
         }
@@ -17,7 +14,10 @@ pipeline {
             steps {
                 echo "testing this declarative build sample"
                 sh '''
-                echo "passes stage 2"
+                aws sts assume-role --role-arn arn:aws:iam::125451170834:role/arun-asg --role-session-name devops-example
+                touch hello.txt
+                echo "hello devops" > hello.txt
+                aws s3 cp hello.txt s3://arunsinj/devops/
                 '''
             }
          }
