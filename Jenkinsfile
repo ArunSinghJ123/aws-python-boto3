@@ -13,19 +13,19 @@ pipeline {
                 '''
             }
         }
-        stage('Copying to S3') {
+         stage('Copying to S3') {
             steps {
                 echo "testing this declarative build sample"
                 sh '''
-                aws s3 cp  -
+                echo "passes stage 2"
                 '''
             }
-       stage("Sending slack notification") {
-           steps {
-                slackSend color: '#BADA55', message: 'Hello Devops pipe Success', channel: 'devops-planet'
-               }
-           }           
+         stage('Sending slack notification') {
+            steps {
+                   slackSend color: '#BADA55', message: 'Hello Devops pipe Success', channel: 'devops-planet'
+                 }
+            }           
             
-        }
-    }
-}
+         }
+     }
+ }
