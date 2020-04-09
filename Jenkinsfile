@@ -4,6 +4,7 @@ pipeline {
         stage('stage one') {
             steps {
                 echo "testing build"
+                sh 'aws s3 ls'
             }
         }
         stage('stage two') {
