@@ -11,7 +11,7 @@ pipeline {
             }
         }
          stage('Copying to S3') {
-            steps {
+            steps 
                 echo "testing this declarative build sample"
                 sh '''
                 aws sts assume-role --role-arn arn:aws:iam::125451170834:role/arun-asg --role-session-name devops-example
