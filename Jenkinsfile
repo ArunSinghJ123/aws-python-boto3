@@ -4,7 +4,7 @@ pipeline {
         stage('stage one') {
             steps {
                 echo "testing build"
-                sh 'aws s3 ls'
+                sh 'aws sts assume-role --role-arn arn:aws:iam::125451170834:role/arun-asg --role-session-name devops-example'
             }
         }
         stage('stage two') {
