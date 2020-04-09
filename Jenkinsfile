@@ -1,7 +1,7 @@
 pipeline {
     agent any
     stages {
-        stage('stage one') {
+        stage('Writing the File') {
             steps {
                 echo "testing build"
                 sh '''
@@ -13,10 +13,19 @@ pipeline {
                 '''
             }
         }
-        stage('stage two') {
+        stage('Copying to S3') {
             steps {
                 echo "testing this declarative build sample"
+                sh '''
+                aws s3 cp  -
+                '''
             }
+       stage("Sending slack notification") {
+           steps {
+                slackSend color: '#BADA55', message: 'Hello Devops pipe Success', channel: 'devops-planet'
+               }
+           }           
+            
         }
     }
 }
